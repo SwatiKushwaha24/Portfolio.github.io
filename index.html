@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swati Kushwaha | Data Science Portfolio</title>
+    <meta name="theme-color" content="#3A5A40">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Only adding the minimal CSS needed for the header links */
+        header nav a {
+            font-family: 'Merriweather', serif;
+            color: inherit; /* Matches the title color */
+            font-weight: 700; /* Same boldness as title */
+            font-size: 1rem; /* Different size from title */
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Swati Kushwaha</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="certificates.html">Certificates</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://github.com/SwatiKushwaha24" target="_blank"><i class="fab fa-github"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Rest of the document remains EXACTLY the same -->
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <h2>Data Science Portfolio</h2>
+            <p>Empowering Businesses with Data Solutions</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Results-driven Data Science professional with expertise in Python, SQL, Tableau, and Power BI, specializing in exploratory data analysis (EDA), predictive modeling, and business intelligence. Proven ability to transform raw data into actionable insights through projects like COVID-19 unemployment trend analysis, interactive dashboards, and NLP-based hate speech detection.</p>
+                    <p>Strong foundation in deep learning (CNN, Transformers) and statistical modeling, complemented by certifications in AI, Business Analytics, and Excel. Passionate about solving real-world problems with data-driven solutions and delivering impactful visual storytelling.</p>
+                </div>
+                <div class="about-image">
+                    <img src="assets/swati.jpg" alt="Your Name" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section">
+        <div class="container">
+            <h2>My Resume</h2>
+            <div class="resume-container">
+                <iframe src="assets/SwatiKushwaha Resume.pdf" class="resume-pdf"></iframe>
+                <a href="assets/SwatiKushwaha Resume.pdf" download class="btn download-btn">
+                    <i class="fas fa-download"></i> Download PDF
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> swatikushwaha24032003@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +91-8881803846</p>
+                    <div class="social-links">
+                        <a href="https://github.com/SwatiKushwaha24" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/iamswatikushwaha/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.kaggle.com/sylvie24" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form" netlify>
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Forest Portfolio. All rights reserved.</p>
+            <p class="eco-statement">🌱 Sustainable web design • 0.02g CO₂ per view</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
