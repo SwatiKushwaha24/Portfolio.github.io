@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapzine Project | Swati Kushwaha</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Header styling to match main site */
+        header {
+            background: rgba(52, 78, 65, 0.9);
+            backdrop-filter: blur(5px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(163, 177, 138, 0.3);
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        header h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            color: inherit;
+            margin: 0;
+        }
+
+        h2 {
+            color: #a0a499; /* Blue shade - change hex code as needed */
+            /* You can also use: */
+            /* color: royalblue; */
+            /* color: rgb(255, 99, 71); */
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav a {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            color: inherit;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #A3B18A;
+        }
+        
+        nav .fab {
+            font-size: 1.3rem;
+            vertical-align: middle;
+        }
+
+        /* Project detail styles */
+        .project-detail {
+            padding: 4rem 0;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .project-hero {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #588157;
+        }
+        
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        
+        .tech-table th, .tech-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tech-table th {
+            background-color: #f2f2f2;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #588157;
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #3A5A40;
+            transform: translateY(-2px);
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        .live-preview {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Swati Kushwaha</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../index.html#resume">Resume</a></li>
+                    <li><a href="../certificates.html">Certificates</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                    <li><a href="https://github.com/SwatiKushwaha24" target="_blank"><i class="fab fa-github"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="project-detail">
+        <div class="container">
+            <div class="project-header">
+                <h1>Mapzine: Interactive Volcano Map</h1>
+                <div class="project-links">
+                    <a href="https://github.com/SwatiKushwaha24/Mapzine/blob/main/volcano_map.py" class="btn" target="_blank">
+                        <i class="fab fa-github"></i> Source Code
+                    </a>
+                    <a href="https://swatikushwaha24.github.io/SwatiKushwaha.github.io/Mapzine.html" class="btn" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Explore Live Map
+                    </a>
+                </div>
+            </div>
+            
+            <img src="../assets/Screenshot 2025-04-15 164953.jpg" alt="Mapzine Screenshot" class="project-hero">
+            
+            <div class="project-content">
+                <h2>Project Overview</h2>
+                <p>Mapzine is an interactive web-based map application that visualizes global volcano data alongside population density information. Built using Python's Folium library, this project combines geographical data visualization with informative popups to create an engaging educational tool for geology enthusiasts, students, and researchers.</p>
+                
+                <div class="Project Report" style="text-align: center;">
+                    <a href="../assets/Unemployment_Analysis_Report.pdf" class="btn" download="Unemployment_Analysis_Report.pdf">
+                        <i class="fas fa-file-code"></i> Download Report (PDF)
+                    </a>
+                </div>
+                
+                <h2>Technical Specifications</h2>
+                <table class="tech-table">
+                    <tr>
+                        <th>Component</th>
+                        <th>Technology</th>
+                    </tr>
+                    <tr>
+                        <td>Programming Language</td>
+                        <td>Python</td>
+                    </tr>
+                    <tr>
+                        <td>Data Visualization</td>
+                        <td>Folium (Leaflet.js wrapper)</td>
+                    </tr>
+                    <tr>
+                        <td>Data Processing</td>
+                        <td>Pandas</td>
+                    </tr>
+                    <tr>
+                        <td>Data Formats</td>
+                        <td>CSV (volcano data), GeoJSON (population data)</td>
+                    </tr>
+                    <tr>
+                        <td>Output</td>
+                        <td>Standalone HTML file with embedded JavaScript</td>
+                    </tr>
+                </table>
+                
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3><i class="fas fa-mountain"></i> Volcano Visualization</h3>
+                        <ul>
+                            <li>1,500+ global volcanoes plotted</li>
+                            <li>Color-coded by elevation (red/green/blue)</li>
+                            <li>Custom fire icons from Font Awesome</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><i class="fas fa-window-maximize"></i> Interactive Popups</h3>
+                        <ul>
+                            <li>Detailed volcano information</li>
+                            <li>Elevation and coordinates</li>
+                            <li>Direct Google search links</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><i class="fas fa-users"></i> Population Layer</h3>
+                        <ul>
+                            <li>Choropleth map showing density</li>
+                            <li>Three-color gradient scheme</li>
+                            <li>Country-level tooltips</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><i class="fas fa-tv"></i> UI Enhancements</h3>
+                        <ul>
+                            <li>Dual-layer control system</li>
+                            <li>Fixed-position legend</li>
+                            <li>Responsive design</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h2>Technical Implementation</h2>
+                <h3>Data Processing</h3>
+                <pre><code>import folium
+import pandas
+
+data = pandas.read_csv("volcanoes.txt")
+lat = list(data["LAT"])
+lon = list(data["LON"])
+elev = list(data["ELEV"])
+name = list(data["NAME"])</code></pre>
+                
+                <h3>Marker Generation</h3>
+                <pre><code>def color_producer(elevation):
+    if elevation < 1500: return "red"
+    elif 1500 <= elevation < 2500: return "green"
+    else: return "blue"
+
+for lt, ln, el, nm in zip(lat, lon, elev, name):
+    folium.Marker(
+        location=[lt, ln],
+        popup=folium.Popup(html=volcano_popup_html.format(...)),
+        icon=folium.Icon(color=color_producer(el), icon='fire')
+    ).add_to(map)</code></pre>
+                
+                <h2>Challenges & Solutions</h2>
+                <table class="tech-table">
+                    <tr>
+                        <th>Challenge</th>
+                        <th>Solution</th>
+                    </tr>
+                    <tr>
+                        <td>Popup scrollbars disrupting UX</td>
+                        <td>Custom HTML with fixed dimensions</td>
+                    </tr>
+                    <tr>
+                        <td>Slow rendering with 1,500+ markers</td>
+                        <td>Batch processing with generator functions</td>
+                    </tr>
+                    <tr>
+                        <td>Colorblind accessibility</td>
+                        <td>High-contrast color palette selection</td>
+                    </tr>
+                    <tr>
+                        <td>Mobile responsiveness</td>
+                        <td>Folium's built-in mobile adaptations</td>
+                    </tr>
+                </table>
+                
+                <h2>Future Enhancements</h2>
+                <ul>
+                    <li>Real-time seismic data integration</li>
+                    <li>3D elevation profiles</li>
+                    <li>User-submitted volcano photos</li>
+                    <li>Eruption history timelines</li>
+                </ul>
+                
+                <a href="../projects.html" class="btn back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Forest Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

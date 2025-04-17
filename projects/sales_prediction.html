@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertising Sales Prediction | Swati Kushwaha</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Header styling to match main site */
+        header {
+            background: rgba(52, 78, 65, 0.9);
+            backdrop-filter: blur(5px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(163, 177, 138, 0.3);
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        header h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            color: inherit;
+            margin: 0;
+        }
+
+        h2 {
+            color: #a0a499; /* Blue shade - change hex code as needed */
+            /* You can also use: */
+            /* color: royalblue; */
+            /* color: rgb(255, 99, 71); */
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav a {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            color: inherit;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #A3B18A;
+        }
+        
+        nav .fab {
+            font-size: 1.3rem;
+            vertical-align: middle;
+        }
+
+        /* Project detail styles */
+        .project-detail {
+            padding: 4rem 0;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .project-hero {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #588157;
+        }
+        
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        
+        .tech-table th, .tech-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tech-table th {
+            background-color: #f2f2f2;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #588157;
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #3A5A40;
+            transform: translateY(-2px);
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        .live-preview {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+
+        .visualization-section {
+            margin: 2rem 0;
+        }
+        
+        .visualization-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .visualization-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .visualization-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .visualization-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Swati Kushwaha</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../index.html#resume">Resume</a></li>
+                    <li><a href="../certificates.html">Certificates</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                    <li><a href="https://github.com/SwatiKushwaha24" target="_blank"><i class="fab fa-github"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="project-detail">
+        <div class="container">
+            <div class="project-header">
+                <h1>Advertising Sales Prediction</h1>
+                <div class="project-links">
+                    <a href="https://github.com/SwatiKushwaha24/Sales-Prediction/blob/main/Sales%20Prediction%20using%20python.ipynb" class="btn" target="_blank">
+                        <i class="fab fa-github"></i> Source Code
+                    </a>
+                    <!-- <a href="#" class="btn" target="_blank">
+                        <i class="fas fa-chart-line"></i> View Analysis
+                    </a> -->
+                </div>
+            </div>
+            
+            <img src="../assets/—Pngtree—marketing strategy concept businessman shout_7303120.png" alt="Advertising Sales Prediction Screenshot" class="project-hero">
+            
+            <div class="project-content">
+                <h2>Project Overview</h2>
+                <p>This data science project analyzes the relationship between advertising expenditures across different media channels (TV, Radio, Newspaper) and product sales. Using a dataset of advertising budgets and corresponding sales figures, I developed a predictive model to quantify how advertising spending impacts sales performance.</p>
+                
+                <div class="Project Report" style="text-align: center;">
+                    <a href="../assets/Unemployment_Analysis_Report.pdf" class="btn" download="Unemployment_Analysis_Report.pdf">
+                        <i class="fas fa-file-code"></i> Download Report (PDF)
+                    </a>
+                </div>
+                
+                <h2>Technical Specifications</h2>
+                <table class="tech-table">
+                    <tr>
+                        <th>Component</th>
+                        <th>Technology</th>
+                    </tr>
+                    <tr>
+                        <td>Programming Language</td>
+                        <td>Python</td>
+                    </tr>
+                    <tr>
+                        <td>Data Analysis</td>
+                        <td>Pandas, NumPy</td>
+                    </tr>
+                    <tr>
+                        <td>Data Visualization</td>
+                        <td>Matplotlib, Seaborn</td>
+                    </tr>
+                    <tr>
+                        <td>Machine Learning</td>
+                        <td>Scikit-learn</td>
+                    </tr>
+                    <tr>
+                        <td>Model</td>
+                        <td>Linear Regression</td>
+                    </tr>
+                </table>
+                
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3><i class="fas fa-chart-bar"></i> Exploratory Analysis</h3>
+                        <ul>
+                            <li>Comprehensive data quality assessment</li>
+                            <li>Pairplot visualization of relationships</li>
+                            <li>Correlation heatmap of advertising channels</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><i class="fas fa-project-diagram"></i> Feature Engineering</h3>
+                        <ul>
+                            <li>Data normalization with MinMaxScaler</li>
+                            <li>Label encoding for target variable</li>
+                            <li>Train-test split (80/20)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><i class="fas fa-brain"></i> Predictive Modeling</h3>
+                        <ul>
+                            <li>Linear regression implementation</li>
+                            <li>Model training on scaled data</li>
+                            <li>Performance evaluation metrics</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><i class="fas fa-search-dollar"></i> Business Insights</h3>
+                        <ul>
+                            <li>TV advertising effectiveness analysis</li>
+                            <li>ROI comparison across channels</li>
+                            <li>Budget allocation recommendations</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h2>Data Visualizations</h2>
+                <div class="visualization-section">
+                    <div class="visualization-grid">
+                        <div class="visualization-card">
+                            <img src="../assets/Screenshot 2025-04-16 151102.jpg" alt="Advertising Channels Pairplot">
+                            <h3>Pairplot Visualization</h3>
+                            <p>This visualization shows the relationships between each advertising channel (TV, Radio, Newspaper) and sales. The linear regression lines demonstrate the strength of each relationship, with TV advertising showing the strongest correlation.</p>
+                        </div>
+                        
+                        <div class="visualization-card">
+                            <img src="../assets/Screenshot 2025-04-16 151158.jpg" alt="Advertising Channels Correlation Heatmap">
+                            <h3>Correlation Heatmap</h3>
+                            <p>The heatmap quantifies the correlation coefficients between variables. TV advertising shows the highest correlation with sales (0.78), followed by radio (0.58), while newspaper advertising shows the weakest relationship (0.23).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>Technical Implementation</h2>
+                <h3>Data Preparation</h3>
+                <pre><code># Import libraries
+import pandas as pd
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MinMaxScaler, LabelEncoder
+
+# Load and prepare data
+df = pd.read_csv('Advertising.csv')
+df.rename(columns={'Unnamed: 0': 'Index'}, inplace=True)
+
+# Feature-target separation
+X = df.drop('Sales', axis=1)
+y = df[["Sales"]]
+
+# Label encoding and scaling
+le = LabelEncoder()
+y = le.fit_transform(y)
+scaler = MinMaxScaler()
+X_train_scaled = scaler.fit_transform(X_train)</code></pre>
+                
+                <h3>Model Implementation</h3>
+                <pre><code>from sklearn.linear_model import LinearRegression
+from sklearn import metrics
+
+# Model training
+model = LinearRegression()
+model.fit(X_train_scaled, y_train)
+
+# Predictions and evaluation
+y_predictions = model.predict(X_test_scaled)
+print('MAE:', metrics.mean_absolute_error(y_predictions,y_test))
+print('RMSE:', np.sqrt(metrics.mean_squared_error(y_predictions,y_test)))
+print('R-Squared', metrics.r2_score(y_predictions,y_test))</code></pre>
+                
+                <h2>Results & Findings</h2>
+                <h3>Model Performance</h3>
+                <ul>
+                    <li><strong>Mean Absolute Error (MAE):</strong> 7.45</li>
+                    <li><strong>Root Mean Squared Error (RMSE):</strong> 10.22</li>
+                    <li><strong>R-Squared Score:</strong> 0.862 (86.2% variance explained)</li>
+                </ul>
+                
+                <h3>Key Insights</h3>
+                <table class="tech-table">
+                    <tr>
+                        <th>Advertising Channel</th>
+                        <th>Correlation with Sales</th>
+                        <th>Impact</th>
+                    </tr>
+                    <tr>
+                        <td>TV</td>
+                        <td>0.78</td>
+                        <td>Strong positive relationship</td>
+                    </tr>
+                    <tr>
+                        <td>Radio</td>
+                        <td>0.58</td>
+                        <td>Moderate positive relationship</td>
+                    </tr>
+                    <tr>
+                        <td>Newspaper</td>
+                        <td>0.23</td>
+                        <td>Weak relationship</td>
+                    </tr>
+                </table>
+                
+                <h2>Challenges & Solutions</h2>
+                <table class="tech-table">
+                    <tr>
+                        <th>Challenge</th>
+                        <th>Solution</th>
+                    </tr>
+                    <tr>
+                        <td>Linear assumptions</td>
+                        <td>Verified with pairplot visualizations</td>
+                    </tr>
+                    <tr>
+                        <td>Feature scaling</td>
+                        <td>Applied MinMaxScaler for normalization</td>
+                    </tr>
+                    <tr>
+                        <td>Model evaluation</td>
+                        <td>Used multiple metrics (MAE, RMSE, R²)</td>
+                    </tr>
+                    <tr>
+                        <td>Feature importance</td>
+                        <td>Analyzed correlation coefficients</td>
+                    </tr>
+                </table>
+                
+                <h2>Business Applications</h2>
+                <ul>
+                    <li><strong>Budget Optimization:</strong> Reallocate spending to most effective channels</li>
+                    <li><strong>Campaign Planning:</strong> Focus creative resources on high-impact media</li>
+                    <li><strong>Performance Forecasting:</strong> Predict sales based on planned ad spend</li>
+                    <li><strong>ROI Analysis:</strong> Compare effectiveness across media types</li>
+                </ul>
+                
+                <h2>Future Enhancements</h2>
+                <ul>
+                    <li>Implement polynomial regression for non-linear relationships</li>
+                    <li>Add interaction terms between advertising channels</li>
+                    <li>Develop interactive dashboard for marketing team</li>
+                    <li>Incorporate time-series analysis for seasonal trends</li>
+                </ul>
+                
+                <a href="../projects.html" class="btn back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Swati Kushwaha. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertising Sales Prediction | Swati Kushwaha</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Header styling to match main site */
+        header {
+            background: rgba(52, 78, 65, 0.9);
+            backdrop-filter: blur(5px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(163, 177, 138, 0.3);
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        header h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            color: inherit;
+            margin: 0;
+        }
+
+        h2 {
+            color: #a0a499; /* Blue shade - change hex code as needed */
+            /* You can also use: */
+            /* color: royalblue; */
+            /* color: rgb(255, 99, 71); */
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav a {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            color: inherit;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #A3B18A;
+        }
+        
+        nav .fab {
+            font-size: 1.3rem;
+            vertical-align: middle;
+        }
+
+        /* Project detail styles */
+        .project-detail {
+            padding: 4rem 0;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .project-hero {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #588157;
+        }
+        
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        
+        .tech-table th, .tech-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tech-table th {
+            background-color: #f2f2f2;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #588157;
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #3A5A40;
+            transform: translateY(-2px);
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        .live-preview {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .visualization-section {
+            margin: 2rem 0;
+        }
+        
+        .visualization-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .visualization-card {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .visualization-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            border: 1px solid #eee;
+        }
+        
+        @media (max-width: 768px) {
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            .visualization-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Swati Kushwaha</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../index.html#resume">Resume</a></li>
+                    <li><a href="../certificates.html">Certificates</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                    <li><a href="https://github.com/SwatiKushwaha24" target="_blank"><i class="fab fa-github"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="project-detail">
+        <div class="container">
+            <div class="project-header">
+                <h1>Advertising Sales Prediction</h1>
+                <div class="project-links">
+                    <a href="https://github.com/SwatiKushwaha24/Unemployment-Analysis-with-Python/blob/main/Unemployment%20analysis%20with%20python.ipynb" class="btn" target="_blank">
+                        <i class="fab fa-github"></i> Source Code
+                    </a>
+                    <a href="https://github.com/SwatiKushwaha24/Unemployment-Analysis-with-Python/blob/main/README.md#visualizations" class="btn" target="_blank">
+                        <i class="fas fa-chart-line"></i> View Analysis
+                    </a>
+                </div>
+            </div>
+            
+            <img src="../assets/design-01jrz536n2-1744802408.jpg" alt="Unemployment Analysis Screenshot" class="project-hero">
+            
+            <div class="project-content">
+                <h2>Project Overview</h2>
+                <p>This data analysis project examines unemployment trends across Indian states during 2020, with a focus on understanding the impact of COVID-19 lockdown measures. Using Python's data science stack, I analyzed monthly unemployment rates, employment figures, and labor participation rates across different regions of India, revealing significant variations and the pandemic's effect on employment.</p>
+                
+                <div class="Project Report" style="text-align: center;">
+                    <a href="../assets/Unemployment_Analysis_Report.pdf" class="btn" download="Unemployment_Analysis_Report.pdf">
+                        <i class="fas fa-file-code"></i> Download Report (PDF)
+                    </a>
+                </div>
+                
+                <h2>Technical Specifications</h2>
+                <table class="tech-table">
+                    <tr>
+                        <th>Component</th>
+                        <th>Technology</th>
+                    </tr>
+                    <tr>
+                        <td>Programming Language</td>
+                        <td>Python</td>
+                    </tr>
+                    <tr>
+                        <td>Data Analysis</td>
+                        <td>Pandas, NumPy</td>
+                    </tr>
+                    <tr>
+                        <td>Data Visualization</td>
+                        <td>Matplotlib, Seaborn, Plotly</td>
+                    </tr>
+                    <tr>
+                        <td>Data Source</td>
+                        <td>Unemployment_Rate_upto_11_2020.csv</td>
+                    </tr>
+                    <tr>
+                        <td>Key Metrics</td>
+                        <td>Unemployment Rate, Employed, Labor Participation</td>
+                    </tr>
+                </table>
+                
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3><i class="fas fa-chart-bar"></i> Regional Analysis</h3>
+                        <ul>
+                            <li>Grouped statistics by region and state</li>
+                            <li>Comparative analysis of unemployment rates</li>
+                            <li>Labor participation rate trends</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><i class="fas fa-project-diagram"></i> Geographic Visualization</h3>
+                        <ul>
+                            <li>Animated geo-scatter plots</li>
+                            <li>Interactive regional comparisons</li>
+                            <li>Lockdown impact visualization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><i class="fas fa-brain"></i> Temporal Analysis</h3>
+                        <ul>
+                            <li>Monthly employment trends</li>
+                            <li>Pre/post lockdown comparisons</li>
+                            <li>Seasonal pattern identification</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><i class="fas fa-search-dollar"></i> Statistical Insights</h3>
+                        <ul>
+                            <li>Correlation matrix analysis</li>
+                            <li>Box plot distributions</li>
+                            <li>Comparative regional statistics</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h2>Data Visualizations</h2>
+                <div class="visualization-section">
+                    <div class="visualization-grid">
+                        <div class="visualization-card">
+                            <img src="../assets/co-relation heatmap.png" alt="Correlation Heatmap">
+                            <h3>Correlation Heatmap</h3>
+                            <p>This heatmap shows the correlation between unemployment rate, employment figures, labor participation rate, and geographic coordinates. The strongest relationships help identify which factors most influence unemployment trends.</p>
+                        </div>
+                        
+                        <div class="visualization-card">
+                            <img src="../assets/boxplot.png" alt="State-wise Unemployment Boxplot">
+                            <h3>State-wise Unemployment Distribution</h3>
+                            <p>Boxplot showing the distribution of unemployment rates across different Indian states. Highlights states with particularly high or low unemployment rates and shows variation within each state's data.</p>
+                        </div>
+
+                        <div class="visualization-card">
+                            <img src="../assets/geoscatterplot.png" alt="Geographic Unemployment Visualization">
+                            <h3>Geographic Unemployment Visualization</h3>
+                            <p>Animated map showing how unemployment rates changed month-by-month across different regions of India, particularly highlighting the impact of COVID-19 lockdown measures.</p>
+                        </div>
+
+                        <div class="visualization-card">
+                            <img src="../assets/estimatedemployed.png" alt="Monthly Employment Trends">
+                            <h3>Monthly Employment Trends</h3>
+                            <p>Bar chart tracking estimated employed citizens each month from January to October 2020, showing the dramatic impact of lockdown measures on employment.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <h2>Technical Implementation</h2>
+                <h3>Data Preparation</h3>
+                <pre><code># Import libraries
+import pandas as pd
+import numpy as np
+import calendar
+import datetime as dt
+import matplotlib.pyplot as plt
+import seaborn as sns
+import plotly.express as px
+
+# Load and prepare data
+df = pd.read_csv("Unemployment_Rate_upto_11_2020.csv")
+df.head()
+
+# Clean and transform data
+df = df.rename(columns={'Region': 'State', ' Date': 'Date', 
+                       ' Estimated Employed': 'Estimated Employed',
+                       ' Estimated Unemployment Rate (%)': 'Estimated Unemployment Rate',
+                       ' Estimated Labour Participation Rate (%)': 'Estimated Labour Participation Rate',
+                       'Region.1': 'Region'})
+
+# Convert to proper data types
+df['Date'] = pd.to_datetime(df['Date'], dayfirst=True)
+df['Frequency'] = df['Frequency'].astype('category')
+df['Region'] = df['Region'].astype('category')
+
+# Extract month for temporal analysis
+df['Month'] = df['Date'].dt.strftime('%B')</code></pre>
+                
+                <h3>Geographic Visualization</h3>
+                <pre><code># Impact of lockdown visualization
+fig = px.scatter_geo(df, 'longitude', 'latitude', color="Region",
+hover_name="State", size="Estimated Unemployment Rate",
+animation_frame="Month", scope='asia',
+template='seaborn',
+title='Impact of lockdown on Employment across regions')
+
+# Adjust map boundaries for India focus
+fig.update_geos(lataxis_range=[5,35], lonaxis_range=[65, 100],
+oceancolor="#3399FF", showocean=True)</code></pre>
+
+                <h2>Results & Findings</h2>
+                <h3>Regional Analysis</h3>
+                <ul>
+                    <li><strong>Highest Unemployment:</strong> Northern regions showed the highest average unemployment rates</li>
+                    <li><strong>Most Stable:</strong> Southern regions maintained relatively stable employment figures</li>
+                    <li><strong>Urban Impact:</strong> Metropolitan areas experienced sharper employment drops</li>
+                </ul>
+
+                <h3>Lockdown Impact</h3>
+                <ul>
+                    <li><strong>April 2020:</strong> Sharpest increase in unemployment following nationwide lockdown</li>
+                    <li><strong>Recovery:</strong> Gradual improvement from June onward</li>
+                    <li><strong>Sectoral Differences:</strong> Varied impact across different economic sectors</li>
+                </ul>
+                
+                <!-- <h3>Key Insights</h3>
+                <table class="tech-table">
+                    <tr>
+                        <th>Metric</th>
+                        <th>Correlation with Sales</th>
+                        <th>Impact</th>
+                    </tr>
+                    <tr>
+                        <td>TV</td>
+                        <td>0.78</td>
+                        <td>Strong positive relationship</td>
+                    </tr>
+                    <tr>
+                        <td>Radio</td>
+                        <td>0.58</td>
+                        <td>Moderate positive relationship</td>
+                    </tr>
+                    <tr>
+                        <td>Newspaper</td>
+                        <td>0.23</td>
+                        <td>Weak relationship</td>
+                    </tr>
+                </table> -->
+                
+                <h2>Challenges & Solutions</h2>
+                <table class="tech-table">
+                    <tr>
+                        <th>Challenge</th>
+                        <th>Solution</th>
+                    </tr>
+                    <tr>
+                        <td>Data normalization</td>
+                        <td>Standardized column names and formats</td>
+                    </tr>
+                    <tr>
+                        <td>Geographic visualization</td>
+                        <td>Used Plotly with custom India-focused boundaries</td>
+                    </tr>
+                    <tr>
+                        <td>Temporal analysis</td>
+                        <td>Created month extraction for consistent time series</td>
+                    </tr>
+                    <tr>
+                        <td>Outlier detection</td>
+                        <td>Implemented boxplot visualization for distribution analysis</td>
+                    </tr>
+                </table>
+                
+                <h2>Policy Implications</h2>
+                <ul>
+                    <li><strong>Regional Focus:</strong> Targeted employment programs for high-unemployment regions</li>
+                    <li><strong>Sectoral Support:</strong> Industry-specific recovery initiatives</li>
+                    <li><strong>Skill Development:</strong> Enhanced training programs in affected areas</li>
+                    <li><strong>Monitoring:</strong> Improved real-time employment tracking systems</li>
+                </ul>
+                
+                <h2>Future Enhancements</h2>
+                <ul>
+                    <li>Integration with more recent employment data</li>
+                    <li>District-level granularity for localized analysis</li>
+                    <li>Economic sector breakdown of unemployment</li>
+                    <li>Interactive dashboard for policy makers</li>
+                </ul>
+                
+                <a href="../projects.html" class="btn back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Swati Kushwaha. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

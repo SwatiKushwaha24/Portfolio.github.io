@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Dashboard | Swati Kushwaha</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Header styling to match main site */
+        header {
+            background: rgba(52, 78, 65, 0.9);
+            backdrop-filter: blur(5px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(163, 177, 138, 0.3);
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        header h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            color: inherit;
+            margin: 0;
+        }
+
+        h2 {
+            color: #a0a499; /* Blue shade - change hex code as needed */
+            /* You can also use: */
+            /* color: royalblue; */
+            /* color: rgb(255, 99, 71); */
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav a {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            color: inherit;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #A3B18A;
+        }
+        
+        nav .fab {
+            font-size: 1.3rem;
+            vertical-align: middle;
+        }
+
+        /* Project detail styles */
+        .project-detail {
+            padding: 4rem 0;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .project-hero {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #588157;
+        }
+        
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        
+        .tech-table th, .tech-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tech-table th {
+            background-color: #f2f2f2;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #588157;
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #3A5A40;
+            transform: translateY(-2px);
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        .live-preview {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Swati Kushwaha</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../index.html#resume">Resume</a></li>
+                    <li><a href="../certificates.html">Certificates</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                    <li><a href="https://github.com/SwatiKushwaha24" target="_blank"><i class="fab fa-github"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="project-detail">
+        <div class="container">
+            <div class="project-header">
+                <h1>Netflix Dashboard</h1>
+                <div class="project-links">
+                    <a href="https://public.tableau.com/app/profile/swati.kushwaha7802/viz/Netflix_17054142267120/Netflix" class="btn" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Explore The Dashboard
+                    </a>
+                </div>
+            </div>
+            
+            <img src="../assets/Netflix (1).png" alt="Netflix Dashboard Screenshot" class="project-hero">
+            
+            <div class="project-content">
+                <h2>Project Overview</h2>
+                <p>This Tableau dashboard provides a comprehensive analysis of Netflix's content library, derived from a dataset containing 6,234 entries. The dashboard highlights key trends in movies and TV shows, including their distribution by country, genre popularity, ratings, and release years. Below is a detailed breakdown of the insights uncovered.</p>
+                
+                <div class="Project Report" style="text-align: center;">
+                    <a href="../assets/Netflix Content Analysis Dashboard report.pdf" class="btn" download="Netflix Content Analysis Dashboard report.pdf">
+                        <i class="fas fa-file-code"></i> Download Report (PDF)
+                    </a>
+                </div>
+                
+                <h2>Technical Specifications</h2>
+                <table class="tech-table">
+                    <tr>
+                        <th>Component</th>
+                        <th>Technology</th>
+                    </tr>
+                    <tr>
+                        <td>Data Visualization</td>
+                        <td>Tableau</td>
+                    </tr>
+                    <tr>
+                        <td>Data Processing</td>
+                        <td>Tableau Prep</td>
+                    </tr>
+                    <tr>
+                        <td>Data Source</td>
+                        <td>Netflix dataset (6,234 entries)</td>
+                    </tr>
+                    <tr>
+                        <td>Fields Analyzed</td>
+                        <td>Type, Title, Duration, Rating, Country, Release Year, Genre</td>
+                    </tr>
+                    <tr>
+                        <td>Output</td>
+                        <td>Interactive Tableau Dashboard</td>
+                    </tr>
+                </table>
+                
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3><i class="fas fa-film"></i> Content Analysis</h3>
+                        <ul>
+                            <li>Detailed breakdown of Movies vs TV Shows</li>
+                            <li>Duration analysis by content type</li>
+                            <li>Release year trends visualization</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><i class="fas fa-globe"></i> Geographic Distribution</h3>
+                        <ul>
+                            <li>Content distribution by country</li>
+                            <li>Regional content preferences</li>
+                            <li>International vs domestic production</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><i class="fas fa-tags"></i> Genre Insights</h3>
+                        <ul>
+                            <li>Top 10 genres visualization</li>
+                            <li>Genre popularity trends</li>
+                            <li>Documentaries and Stand-Up Comedy analysis</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><i class="fas fa-star"></i> Rating System</h3>
+                        <ul>
+                            <li>Content rating distribution</li>
+                            <li>Target audience analysis</li>
+                            <li>Maturity level visualization</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h2>Key Insights</h2>
+                <h3>Content Distribution</h3>
+                <ul>
+                    <li><strong>TV Shows</strong> account for <strong>31.58%</strong> of the total content (1,969 entries)</li>
+                    <li>The remaining <strong>68.42%</strong> are <strong>Movies</strong></li>
+                    <li>Example content analyzed: The movie <em>Shame</em> (2014) with its rating and description</li>
+                </ul>
+                
+                <h3>Genre Popularity</h3>
+                <ul>
+                    <li><strong>Documentaries</strong> and <strong>Stand-Up Comedy</strong> dominate the platform</li>
+                    <li>Other popular genres include:
+                        <ul>
+                            <li>Dramas (International and Independent)</li>
+                            <li>Comedies (often combined with Dramas or International Movies)</li>
+                            <li>Children & Family Movies</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <h3>Release Year Trends</h3>
+                <ul>
+                    <li>Content spans multiple years with examples from 2014 to 2017 highlighted</li>
+                    <li>Visualization of content production trends over time</li>
+                </ul>
+                
+                <h2>Challenges & Solutions</h2>
+                <table class="tech-table">
+                    <tr>
+                        <th>Challenge</th>
+                        <th>Solution</th>
+                    </tr>
+                    <tr>
+                        <td>Handling mixed content types</td>
+                        <td>Created separate visualizations for Movies and TV Shows</td>
+                    </tr>
+                    <tr>
+                        <td>Multiple genre tags per title</td>
+                        <td>Developed genre frequency analysis</td>
+                    </tr>
+                    <tr>
+                        <td>International content categorization</td>
+                        <td>Implemented country-specific filters</td>
+                    </tr>
+                    <tr>
+                        <td>Rating system standardization</td>
+                        <td>Normalized rating categories for comparison</td>
+                    </tr>
+                </table>
+                
+                <h2>Future Enhancements</h2>
+                <ul>
+                    <li>Integration with Netflix's API for real-time data</li>
+                    <li>User preference analysis based on viewing history</li>
+                    <li>Content recommendation engine visualization</li>
+                    <li>Comparative analysis with other streaming platforms</li>
+                </ul>
+                
+                <a href="../projects.html" class="btn back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Swati Kushwaha. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

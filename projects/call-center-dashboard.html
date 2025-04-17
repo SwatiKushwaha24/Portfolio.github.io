@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Center Dashboard | Swati Kushwaha</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Header styling to match main site */
+        header {
+            background: rgba(52, 78, 65, 0.9);
+            backdrop-filter: blur(5px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid rgba(163, 177, 138, 0.3);
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        header h1 {
+            font-family: 'Merriweather', serif;
+            font-size: 1.8rem;
+            color: inherit;
+            margin: 0;
+        }
+
+        h2 {
+            color: #a0a499; /* Blue shade - change hex code as needed */
+            /* You can also use: */
+            /* color: royalblue; */
+            /* color: rgb(255, 99, 71); */
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav a {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            color: inherit;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #A3B18A;
+        }
+        
+        nav .fab {
+            font-size: 1.3rem;
+            vertical-align: middle;
+        }
+
+        /* Project detail styles */
+        .project-detail {
+            padding: 4rem 0;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .project-hero {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #588157;
+        }
+        
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+        }
+        
+        .tech-table th, .tech-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tech-table th {
+            background-color: #f2f2f2;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #588157;
+            color: white;
+            padding: 0.7rem 1.8rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: #3A5A40;
+            transform: translateY(-2px);
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+        
+        .live-preview {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Swati Kushwaha</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="../index.html#resume">Resume</a></li>
+                    <li><a href="../certificates.html">Certificates</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                    <li><a href="https://github.com/SwatiKushwaha24" target="_blank"><i class="fab fa-github"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="project-detail">
+        <div class="container">
+            <div class="project-header">
+                <h1>Call Center Dashboard</h1>
+                <div class="project-links">
+                    <a href="#" class="btn" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> View Dashboard
+                    </a>
+                </div>
+            </div>
+            
+            <img src="../assets/DashboardCallCenter.png" alt="Call Center Dashboard Screenshot" class="project-hero">
+            
+            <div class="project-content">
+                <h2>Project Overview</h2>
+                <p>This interactive Excel dashboard analyzes the 2020 call center demo dataset from the U.S., providing actionable insights to enhance decision-making and operations. The dashboard reveals key findings including billing questions as the top inquiry, high customer satisfaction scores, and service level agreement compliance metrics. It also identifies trends like the 31st day of the month having the lowest call volume.</p>
+                
+                <div class="Project Report" style="text-align: center;">
+                    <a href="../assets/Unemployment_Analysis_Report.pdf" class="btn" download="Unemployment_Analysis_Report.pdf">
+                        <i class="fas fa-file-code"></i> Download Report (PDF)
+                    </a>
+                </div>
+                
+                <h2>Technical Specifications</h2>
+                <table class="tech-table">
+                    <tr>
+                        <th>Component</th>
+                        <th>Technology</th>
+                    </tr>
+                    <tr>
+                        <td>Platform</td>
+                        <td>Microsoft Excel</td>
+                    </tr>
+                    <tr>
+                        <td>Data Visualization</td>
+                        <td>Excel Charts, Pivot Tables</td>
+                    </tr>
+                    <tr>
+                        <td>Data Processing</td>
+                        <td>Excel Formulas, Power Query</td>
+                    </tr>
+                    <tr>
+                        <td>Data Source</td>
+                        <td>U.S. Call Center Dataset (October 2020)</td>
+                    </tr>
+                    <tr>
+                        <td>Records Processed</td>
+                        <td>32,941 call records</td>
+                    </tr>
+                </table>
+                
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3><i class="fas fa-phone-alt"></i> Call Volume Analysis</h3>
+                        <ul>
+                            <li>32,941 total calls analyzed</li>
+                            <li>Daily call trend visualization</li>
+                            <li>State-wise call distribution map</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><i class="fas fa-chart-line"></i> Performance Metrics</h3>
+                        <ul>
+                            <li>Average satisfaction score: 5.548</li>
+                            <li>Average call duration: 25.02 minutes</li>
+                            <li>SLA compliance tracking</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><i class="fas fa-comments"></i> Channel Breakdown</h3>
+                        <ul>
+                            <li>Call Center: 10,639 contacts</li>
+                            <li>Chatbot: 8,256 contacts</li>
+                            <li>Email: 7,470 contacts</li>
+                            <li>Web: 6,576 contacts</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <h3><i class="fas fa-filter"></i> Interactive Filters</h3>
+                        <ul>
+                            <li>Filter by call day (01-31)</li>
+                            <li>Filter by U.S. state</li>
+                            <li>Filter by contact channel</li>
+                            <li>Filter by call reason</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h2>Key Insights</h2>
+                <h3>Top-Level Metrics</h3>
+                <ul>
+                    <li><strong>Total Calls:</strong> 32,941 calls received during October 2020</li>
+                    <li><strong>Customer Satisfaction:</strong> Average score of 5.548 (likely out of 7 or 10)</li>
+                    <li><strong>Call Duration:</strong> Average of 25.02 minutes per call</li>
+                </ul>
+                
+                <h3>Call Patterns</h3>
+                <ul>
+                    <li><strong>Peak Days:</strong> Mid-month showed highest call volumes</li>
+                    <li><strong>Lowest Volume:</strong> 31st day of the month had fewest calls</li>
+                    <li><strong>Geographic Trends:</strong> Certain states showed significantly higher call volumes</li>
+                </ul>
+                
+                <h3>Customer Concerns</h3>
+                <ul>
+                    <li><strong>Top Reason:</strong> Billing Questions (23,462 calls)</li>
+                    <li><strong>Other Issues:</strong> Payments (4,749), Service Outage (4,730)</li>
+                </ul>
+                
+                <h3>Service Performance</h3>
+                <ul>
+                    <li><strong>SLA Compliance:</strong> 20,625 calls handled within SLA</li>
+                    <li><strong>Below SLA:</strong> 8,148 calls</li>
+                    <li><strong>Above SLA:</strong> 4,168 calls</li>
+                </ul>
+                
+                <h2>Technical Implementation</h2>
+                <h3>Data Processing</h3>
+                <ul>
+                    <li>Cleaned and transformed raw call center data using Power Query</li>
+                    <li>Created calculated fields for key metrics (duration, satisfaction, SLA compliance)</li>
+                    <li>Built data model to connect multiple data tables</li>
+                </ul>
+                
+                <h3>Visualization Techniques</h3>
+                <ul>
+                    <li>Used combination charts for time-series analysis</li>
+                    <li>Implemented conditional formatting for SLA status indicators</li>
+                    <li>Created interactive slicers for user filtering</li>
+                    <li>Designed custom KPI cards for top-level metrics</li>
+                </ul>
+                
+                <h2>Challenges & Solutions</h2>
+                <table class="tech-table">
+                    <tr>
+                        <th>Challenge</th>
+                        <th>Solution</th>
+                    </tr>
+                    <tr>
+                        <td>Handling large dataset in Excel</td>
+                        <td>Optimized with Power Pivot and data model</td>
+                    </tr>
+                    <tr>
+                        <td>Creating geographic visualization</td>
+                        <td>Implemented map chart with state-level data</td>
+                    </tr>
+                    <tr>
+                        <td>Dynamic metric calculations</td>
+                        <td>Used DAX measures for real-time updates</td>
+                    </tr>
+                    <tr>
+                        <td>User-friendly interface</td>
+                        <td>Designed intuitive layout with clear visual hierarchy</td>
+                    </tr>
+                </table>
+                
+                <h2>Business Impact</h2>
+                <ul>
+                    <li>Identified peak call times for better staff scheduling</li>
+                    <li>Highlighted most common customer issues for training focus</li>
+                    <li>Revealed channel preferences for resource allocation</li>
+                    <li>Provided SLA performance benchmarks for quality improvement</li>
+                </ul>
+                
+                <h2>Future Enhancements</h2>
+                <ul>
+                    <li>Integration with live call center data feed</li>
+                    <li>Agent performance tracking metrics</li>
+                    <li>Call resolution time analysis</li>
+                    <li>Customer sentiment analysis integration</li>
+                </ul>
+                
+                <a href="../projects.html" class="btn back-btn">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Swati Kushwaha. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
