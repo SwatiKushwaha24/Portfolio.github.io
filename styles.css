@@ -91,7 +91,8 @@ header {
     backdrop-filter: blur(5px);
     position: sticky;
     top: 0;
-    z-index: 100;
+    /* z-index: 100; */
+    z-index: 1000; /* Higher than other elements */
     padding: 1.2rem 0;
     border-bottom: 1px solid rgba(163, 177, 138, 0.3);
 }
@@ -100,6 +101,7 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Added for better mobile behavior */
 }
 
 nav ul {
@@ -188,6 +190,72 @@ nav a:hover {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+    background-color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: rgba(52, 78, 65, 0.95);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        z-index: 99;
+        padding: 1rem 0;
+        border-top: 1px solid rgba(163, 177, 138, 0.3);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+    
+    /* Adjust header height for mobile */
+    header {
+        padding: 0.8rem 0;
+    }
+    
+    header .container {
+        align-items: center;
+    }
 }
 
 /* Contact Section */
