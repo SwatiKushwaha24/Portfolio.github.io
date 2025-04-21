@@ -80,3 +80,49 @@ if (hamburger && navMenu) {
         });
     });
 }
+
+// PDF Viewer Implementation
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize PDF.js
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 
+      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
+  
+    // Load the PDF
+    const loadingTask = pdfjsLib.getDocument('assets/SwatiKushwaha Resume.pdf');
+    
+    loadingTask.promise.then(function(pdf) {
+      // Fetch the first page
+      return pdf.getPage(1).then(function(page) {
+        const scale = 1.5;
+        const viewport = page.getViewport({ scale: scale });
+  
+        // Prepare canvas
+        const canvas = document.getElementById('pdf-canvas');
+        const context = canvas.getContext('2d');
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+  
+        // Render PDF page into canvas context
+        const renderContext = {
+          canvasContext: context,
+          viewport: viewport
+        };
+        
+        return page.render(renderContext).promise;
+      });
+    }).catch(function(error) {
+      console.error('PDF loading error:', error);
+      // Fallback to download button only
+      document.getElementById('pdf-viewer-container').innerHTML = `
+        <div class="pdf-fallback">
+          <p>Unable to display PDF preview.</p>
+          <a href="assets/SwatiKushwaha Resume.pdf" class="btn" target="_blank">
+            <i class="fas fa-external-link-alt"></i> Open PDF
+          </a>
+          <a href="assets/SwatiKushwaha Resume.pdf" download class="btn download-btn">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </div>
+      `;
+    });
+  });
