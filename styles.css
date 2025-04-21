@@ -170,7 +170,7 @@ nav a:hover {
 }
 
 /* Resume Section */
-/* .resume-container {
+.resume-container {
     background: white;
     border-radius: 10px;
     padding: 2rem;
@@ -190,54 +190,6 @@ nav a:hover {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-} */
-
-/* 2 Resume Section Container */
-.resume-container {
-    background: white;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-}
-  
-/* Responsive PDF iframe */
-.resume-pdf {
-    width: 100%;
-    height: 80vh; /* Use viewport height for better fit */
-    border: 1px solid #eee;
-    margin-bottom: 2rem;
-    border-radius: 5px;
-}
-  
-/* Download button style */
-.download-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.5rem;
-    background-color: #3367D6;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.3s ease;
-}
-  
-.download-btn:hover {
-    background-color: #2a56c6;
-}
-  
-/* Mobile view adjustments */
-@media (max-width: 768px) {
-    .resume-container {
-      padding: 1rem;
-    }
-  
-    .resume-pdf {
-      height: 70vh; 
-    }
 }
 
 /* Hamburger Menu Styles */
