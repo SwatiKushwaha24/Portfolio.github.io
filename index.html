@@ -1,5 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+  /* PDF Viewer Custom Styles */
+  #pdf-viewer-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  #pdf-canvas {
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+</style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,13 +99,15 @@
     <section id="resume" class="section">
         <div class="container">
             <h2>My Resume</h2>
-            <div class="resume-container">
-                <iframe src="assets/SwatiKushwaha Resume.pdf" class="resume-pdf"></iframe>
+            <div id="pdf-viewer-container">
+              <canvas id="pdf-canvas"></canvas>
+              <div class="btn-container">  <!-- New container div -->
                 <a href="assets/SwatiKushwaha Resume.pdf" download class="btn download-btn">
-                    <i class="fas fa-download"></i> Download PDF
+                  <i class="fas fa-download"></i> Download PDF
                 </a>
+              </div>
             </div>
-        </div>
+          </div>
     </section>
 
     <!-- Contact Section -->
