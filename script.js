@@ -82,6 +82,7 @@ if (hamburger && navMenu) {
 }
 
 // PDF Viewer Implementation
+// Adapted from pdf.js by Mozilla (GitHub: https://github.com/mozilla/pdf.js)  
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize PDF.js
     pdfjsLib.GlobalWorkerOptions.workerSrc = 
