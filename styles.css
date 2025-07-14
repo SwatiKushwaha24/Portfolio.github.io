@@ -435,7 +435,7 @@ footer {
 
 /* Add to styles.css */
 
-.horizontal-scroll-wrapper {
+/* .horizontal-scroll-wrapper {
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
@@ -444,12 +444,22 @@ footer {
     scroll-behavior: smooth;
     scroll-padding: 1rem;
     padding-bottom: 1rem;
+} */
+
+.horizontal-scroll-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    display: flex;
+    padding-bottom: 1rem;
+    scroll-padding: 1rem;
+    gap: 2rem;
 }
 
 .projects-grid {
-  display: inline-flex;
-  gap: 1.5rem;
-  flex-wrap: nowrap;
+  display: flex;
+  gap: 2rem;
 }
 
 /* .projects-grid {
@@ -470,9 +480,9 @@ footer {
 } */
 
 .project-card {
-    min-width: 300px;
-    flex-shrink: 0;
     scroll-snap-align: start;
+    flex: 0 0 300px; /* locks card width without shrink/grow */
+    /* keep the rest of your styles */
     background: 
         linear-gradient(135deg, rgba(218, 215, 205, 0.9) 0%, rgba(163, 177, 138, 0.95) 100%),
         var(--card-texture);
