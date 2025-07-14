@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
       'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js';
   
     // Load the PDF
-    const loadingTask = pdfjsLib.getDocument("assets/Swati_s_resume (2).pdf");
+    const loadingTask = pdfjsLib.getDocument("assets/Swati_s_resume__Creative_ (1).pdf");
     
     loadingTask.promise.then(function(pdf) {
       // Fetch the first page
@@ -117,10 +117,10 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('pdf-viewer-container').innerHTML = `
         <div class="pdf-fallback">
           <p>Unable to display PDF preview.</p>
-          <a href="assets/Swati_s_resume (2).pdf" class="btn" target="_blank">
+          <a href="assets/Swati_s_resume__Creative_ (1).pdf" class="btn" target="_blank">
             <i class="fas fa-external-link-alt"></i> Open PDF
           </a>
-          <a href="assets/Swati_s_resume (2).pdf" download class="btn download-btn">
+          <a href="assets/Swati_s_resume__Creative_ (1).pdf" download class="btn download-btn">
             <i class="fas fa-download"></i> Download PDF
           </a>
         </div>
