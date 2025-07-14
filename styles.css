@@ -434,14 +434,45 @@ footer {
 }
 
 /* Add to styles.css */
+
+.horizontal-scroll-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scroll-padding: 1rem;
+    padding-bottom: 1rem;
+}
+
 .projects-grid {
+  display: inline-flex;
+  gap: 1.5rem;
+  flex-wrap: nowrap;
+}
+
+/* .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
 }
+ */
+/* .project-card {
+    background: 
+        linear-gradient(135deg, rgba(218, 215, 205, 0.9) 0%, rgba(163, 177, 138, 0.95) 100%),
+        var(--card-texture);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+} */
 
 .project-card {
+    min-width: 300px;
+    flex-shrink: 0;
+    scroll-snap-align: start;
     background: 
         linear-gradient(135deg, rgba(218, 215, 205, 0.9) 0%, rgba(163, 177, 138, 0.95) 100%),
         var(--card-texture);
