@@ -817,7 +817,7 @@ header .container {
     }
 
     nav ul {
-        display: none; /* hide full menu */
+        display: flex; /* hide full menu */
     }
 }
 
@@ -831,3 +831,4 @@ header .container {
         display: flex; /* show full menu */
     }
 }
+
