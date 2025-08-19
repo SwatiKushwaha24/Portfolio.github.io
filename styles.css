@@ -513,7 +513,7 @@ footer {
     padding-bottom: 60px; /* space for button */
 }
 
-/* Button at bottom center */
+/* Button at bottom center (unchanged size) */
 .project-card .btn {
     position: absolute;
     bottom: 15px;
@@ -524,7 +524,7 @@ footer {
 /* Mobile adjustments */
 @media (max-width: 768px) {
     .project-card {
-        flex: 1 1 100%;   /* allow full width on mobile */
+        flex: 1 1 100%;   /* full width on mobile */
         min-height: 320px; /* smaller height for stacked layout */
     }
 }
@@ -557,4 +557,5 @@ nav .active {
     color: var(--primary-light);
     font-weight: 700;
 }
+
 
