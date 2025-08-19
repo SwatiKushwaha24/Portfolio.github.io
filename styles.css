@@ -716,13 +716,6 @@ nav .active {
         max-height: 60vh;
     }
 
-    body,
-    header,
-    #hero,
-    footer{
-    background: pink !important;
-    }
-    
     /* Download button */
     .download-btn {
         padding: 0.6rem 1.5rem;
@@ -746,6 +739,16 @@ nav .active {
     nav ul {
         gap: 1rem;
     }
+
+    /* Contact Section - stack */
+    .contact-content {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto auto;
+    }
+    .contact-info {
+        grid-row: 1;
+    }
+    .contact-form {
+        grid-row: 2;
+    }
 }
-
-
