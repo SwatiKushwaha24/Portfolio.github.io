@@ -479,10 +479,9 @@ footer {
     transition: transform 0.3s;
 } */
 
-.project-card {
+/* .project-card {
     scroll-snap-align: start;
-    flex: 0 0 300px; /* locks card width without shrink/grow */
-    /* keep the rest of your styles */
+    flex: 0 0 300px; 
     background: 
         linear-gradient(135deg, rgba(218, 215, 205, 0.9) 0%, rgba(163, 177, 138, 0.95) 100%),
         var(--card-texture);
@@ -490,6 +489,44 @@ footer {
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     transition: transform 0.3s;
+}
+ */
+
+.project-card {
+    scroll-snap-align: start;
+    flex: 0 0 300px; /* locks card width without shrink/grow */
+    background: 
+        linear-gradient(135deg, rgba(218, 215, 205, 0.9) 0%, rgba(163, 177, 138, 0.95) 100%),
+        var(--card-texture);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+
+    /* For consistency + button positioning */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    min-height: 420px; /* desktop height */
+    padding-bottom: 60px; /* space for button */
+}
+
+/* Button at bottom center */
+.project-card .btn {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .project-card {
+        flex: 1 1 100%;   /* allow full width on mobile */
+        min-height: 320px; /* smaller height for stacked layout */
+    }
 }
 
 .project-card:hover {
@@ -520,3 +557,4 @@ nav .active {
     color: var(--primary-light);
     font-weight: 700;
 }
+
