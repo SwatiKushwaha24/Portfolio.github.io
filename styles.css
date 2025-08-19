@@ -101,7 +101,8 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Added for better mobile behavior */
+    flex-wrap: nowrap; /* keep everything in one line */
+    width: 100%;
 }
 
 nav ul {
@@ -234,10 +235,15 @@ nav a:hover {
  */
 
 /* Hamburger Menu Styles */
-.hamburger {
+/* .hamburger {
     display: none;
     cursor: pointer;
     padding: 10px;
+} */
+
+.hamburger {
+    margin-left: auto;   /* pushes it all the way to the right */
+    margin-right: 1rem;  /* adds some spacing from screen edge */
 }
 
 .bar {
@@ -802,3 +808,4 @@ header .container {
     margin-left: auto;
     margin-right: 1rem; /* adjust spacing from right edge */
 }
+
