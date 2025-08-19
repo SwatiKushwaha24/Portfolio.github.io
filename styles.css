@@ -600,13 +600,24 @@ nav .active {
 }
  */
 
-/* 📱 Tablet & Mobile view adjustments */
+/* 🎨 Base Desktop Styles (Default for large screens)
+   -------------------------------------------------- */
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* side by side on desktop */
+    gap: 2rem;
+}
+
+/* Other desktop styles here… */
+
+
+/* 📱 Tablet & Mobile (≤ 768px)
+   -------------------------------------------------- */
 @media (max-width: 768px) {
     /* PDF Viewer */
     #pdf-viewer-container {
-        padding: 1rem; /* last value wins */
+        padding: 1rem;
     }
-
     #pdf-canvas {
         height: auto;
         max-height: 70vh;
@@ -630,7 +641,6 @@ nav .active {
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
     }
-
     .nav-menu {
         position: fixed;
         left: -100%;
@@ -653,7 +663,7 @@ nav .active {
     }
 
     header {
-        padding: 0.8rem 0; /* smaller header */
+        padding: 0.8rem 0;
     }
     header .container {
         align-items: center;
@@ -664,24 +674,24 @@ nav .active {
         grid-template-columns: 1fr;
     }
     .about-image {
-        order: -1; /* put image above text */
+        order: -1;
         text-align: center;
     }
 
     /* Contact Section */
     .contact-content {
-        display: grid;
-        grid-template-columns: 1fr; /* force stacking */
+        display: grid !important;
+        grid-template-columns: 1fr !important; /* force stacking */
         grid-template-rows: auto auto;
     }
     .contact-info {
-        grid-row: 1; /* always first */
+        grid-row: 1;
     }
     .contact-form {
-        grid-row: 2; /* always below */
+        grid-row: 2;
     }
 
-    /* Hero Text */
+    /* Hero */
     #hero h2 {
         font-size: 2.5rem;
     }
@@ -697,7 +707,9 @@ nav .active {
     }
 }
 
-/* 📱 Small Phones */
+
+/* 📱 Small Mobile (≤ 480px)
+   -------------------------------------------------- */
 @media (max-width: 480px) {
     /* PDF */
     #pdf-canvas {
