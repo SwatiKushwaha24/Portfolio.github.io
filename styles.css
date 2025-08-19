@@ -752,3 +752,20 @@ nav .active {
         grid-row: 2;
     }
 }
+
+/* last media query stuff above... */
+
+
+/* 🚫 Prevent sideways scrolling on small screens */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img, iframe, canvas {
+  max-width: 100%;
+}
