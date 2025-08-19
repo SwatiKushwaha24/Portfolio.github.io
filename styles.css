@@ -390,9 +390,8 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .about-content,
-    .contact-content {
-        grid-template-columns: 1fr;
+    .about-content {
+    grid-template-columns: 1fr;
     }
 
     .about-image {
@@ -557,7 +556,11 @@ nav .active {
     font-weight: 700;
 }
 
-
+@media (max-width: 480px) {
+    .contact-content {
+        grid-template-columns: 1fr; /* stack only on very tiny screens */
+    }
+}
 
 
 
