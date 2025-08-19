@@ -215,7 +215,7 @@ nav a:hover {
   }
   
 /* Mobile view adjustments */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     #pdf-viewer-container {
       padding: 1.5rem;
     }
@@ -223,14 +223,15 @@ nav a:hover {
     .btn-container {
       margin-top: 1rem;
     }
-  }
+  } */
   
-  @media (max-width: 480px) {
+/*   @media (max-width: 480px) {
     .download-btn {
       padding: 0.6rem 1.5rem;
       font-size: 0.9rem;
     }
   }
+ */
 
 /* Hamburger Menu Styles */
 .hamburger {
@@ -248,7 +249,7 @@ nav a:hover {
     background-color: var(--accent-color);
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     #pdf-viewer-container {
       padding: 1rem;
     }
@@ -263,9 +264,9 @@ nav a:hover {
     #pdf-canvas {
       max-height: 60vh;
     }
-  }
+  } */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .hamburger {
         display: block;
     }
@@ -305,7 +306,6 @@ nav a:hover {
         margin: 1rem 0;
     }
     
-    /* Adjust header height for mobile */
     header {
         padding: 0.8rem 0;
     }
@@ -314,6 +314,7 @@ nav a:hover {
         align-items: center;
     }
 }
+ */
 
 /* Contact Section */
 .contact-content {
@@ -414,7 +415,7 @@ footer {
       }
 } */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .about-content {
         grid-template-columns: 1fr;
     }
@@ -423,12 +424,11 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* Force form below info */
     .contact-info {
-        order: 1; /* goes first */
+        order: 1; 
     }
     .contact-form {
-        order: 2; /* goes below */
+        order: 2; 
     }
 
     .about-image {
@@ -468,7 +468,7 @@ footer {
         gap: 1rem;
     }
 }
-
+ */
 /* Add to styles.css */
 
 /* .horizontal-scroll-wrapper {
@@ -593,12 +593,138 @@ nav .active {
     font-weight: 700;
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
     .contact-content {
-        grid-template-columns: 1fr; /* stack only on very tiny screens */
+        grid-template-columns: 1fr;
+    }
+}
+ */
+
+/* 📱 Tablet & Mobile view adjustments */
+@media (max-width: 768px) {
+    /* PDF Viewer */
+    #pdf-viewer-container {
+        padding: 1rem; /* last value wins */
+    }
+
+    #pdf-canvas {
+        height: auto;
+        max-height: 70vh;
+    }
+
+    /* Buttons */
+    .btn-container {
+        margin-top: 1rem;
+    }
+
+    /* Navigation / Hamburger Menu */
+    .hamburger {
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: rgba(52, 78, 65, 0.95);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        z-index: 99;
+        padding: 1rem 0;
+        border-top: 1px solid rgba(163, 177, 138, 0.3);
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+    .nav-menu li {
+        margin: 1rem 0;
+    }
+
+    header {
+        padding: 0.8rem 0; /* smaller header */
+    }
+    header .container {
+        align-items: center;
+    }
+
+    /* About Section */
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    .about-image {
+        order: -1; /* put image above text */
+        text-align: center;
+    }
+
+    /* Contact Section */
+    .contact-content {
+        display: grid;
+        grid-template-columns: 1fr; /* force stacking */
+        grid-template-rows: auto auto;
+    }
+    .contact-info {
+        grid-row: 1; /* always first */
+    }
+    .contact-form {
+        grid-row: 2; /* always below */
+    }
+
+    /* Hero Text */
+    #hero h2 {
+        font-size: 2.5rem;
+    }
+
+    /* Resume */
+    .resume-pdf {
+        height: 80vh;
+        width: 100%;
+        min-height: 500px;
+    }
+    .resume-container {
+        padding: 1rem;
     }
 }
 
+/* 📱 Small Phones */
+@media (max-width: 480px) {
+    /* PDF */
+    #pdf-canvas {
+        max-height: 60vh;
+    }
 
+    /* Download button */
+    .download-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
 
+    /* Sections */
+    .section {
+        padding: 3rem 0;
+    }
 
+    /* Hero */
+    #hero h2 {
+        font-size: 2rem;
+    }
+    #hero p {
+        font-size: 1.2rem;
+    }
+
+    /* Nav */
+    nav ul {
+        gap: 1rem;
+    }
+}
