@@ -716,7 +716,10 @@ nav .active {
         max-height: 60vh;
     }
 
-    body {
+    body,
+    header,
+    #hero,
+    footer{
     background: pink !important;
     }
     
@@ -744,4 +747,5 @@ nav .active {
         gap: 1rem;
     }
 }
+
 
