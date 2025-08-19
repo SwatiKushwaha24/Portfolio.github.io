@@ -757,7 +757,7 @@ nav .active {
 
 
 /* 🚫 Prevent sideways scrolling on small screens */
-html, body {
+/* html, body {
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -768,4 +768,37 @@ html, body {
 
 img, iframe, canvas {
   max-width: 100%;
+}
+ */
+
+/* === Fix layout issues === */
+
+/* Prevent horizontal scroll */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Ensure proper wrapping */
+* {
+    box-sizing: border-box;
+}
+
+/* Fix email cutting off */
+.contact-info a,
+.contact-info p {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+/* Push hamburger to the right side */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hamburger {
+    margin-left: auto;
+    margin-right: 1rem; /* adjust spacing from right edge */
 }
