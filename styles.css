@@ -513,12 +513,14 @@ footer {
     padding-bottom: 60px; /* space for button */
 }
 
-/* Button at bottom center (unchanged size) */
+/* Button stays only as wide as its text */
 .project-card .btn {
     position: absolute;
     bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
+    white-space: nowrap; /* ensures text stays on one line */
+    width: auto; /* button width adapts to text */
 }
 
 /* Mobile adjustments */
@@ -557,5 +559,6 @@ nav .active {
     color: var(--primary-light);
     font-weight: 700;
 }
+
 
 
