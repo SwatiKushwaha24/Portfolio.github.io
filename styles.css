@@ -528,14 +528,6 @@ footer {
     margin-top: 6rem;
 }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
-    .project-card {
-        flex: 1 1 100%;   /* full width on mobile */
-        min-height: 320px; /* smaller height for stacked layout */
-    }
-}
-
 .project-card:hover {
     transform: translateY(-10px);
 }
@@ -564,6 +556,7 @@ nav .active {
     color: var(--primary-light);
     font-weight: 700;
 }
+
 
 
 
