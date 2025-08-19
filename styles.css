@@ -716,6 +716,10 @@ nav .active {
         max-height: 60vh;
     }
 
+    body {
+    background: pink !important;
+    }
+    
     /* Download button */
     .download-btn {
         padding: 0.6rem 1.5rem;
@@ -740,3 +744,4 @@ nav .active {
         gap: 1rem;
     }
 }
+
