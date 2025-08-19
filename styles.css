@@ -809,3 +809,25 @@ header .container {
     margin-right: 1rem; /* adjust spacing from right edge */
 }
 
+
+/* Show hamburger only on small screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* visible on tablet & phone */
+    }
+
+    nav ul {
+        display: none; /* hide full menu */
+    }
+}
+
+/* On bigger screens, hide hamburger and show menu */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none; /* hide */
+    }
+
+    nav ul {
+        display: flex; /* show full menu */
+    }
+}
